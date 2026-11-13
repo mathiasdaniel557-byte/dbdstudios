@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Db4D Studio | Designed Before Design</title>
-  <meta name="description" content="Db4D Studio is an independent creative studio making AI-assisted video, motion graphics and brand storytelling.">
+  <title>DBD Studio | Designed Before Design</title>
+  <meta name="description" content="DBD Studio is an independent creative studio making AI-assisted video, motion graphics and brand storytelling.">
 
   <!-- Tab icon: the studio logo (assets/images/logo.png) -->
   <link rel="icon" type="image/png" href="assets/images/logo.png">
@@ -29,6 +29,9 @@
     <symbol id="icon-email" viewBox="0 0 24 24">
       <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
     </symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24">
+      <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+    </symbol>
     <symbol id="icon-chevron-left" viewBox="0 0 24 24">
       <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
     </symbol>
@@ -43,9 +46,9 @@
        HEADER + NAVIGATION
        ========================================================= -->
   <header class="site-header">
-    <a class="site-header__brand" href="#top" aria-label="Db4D Studio, back to top">
+    <a class="site-header__brand" href="#top" aria-label="DBD Studio, back to top">
       <img class="site-header__logo" src="assets/images/logo.png" alt="" width="40" height="40">
-      <span>Db4D Studio</span>
+      <span>DBD Studio</span>
     </a>
 
     <nav class="site-nav" aria-label="Main navigation">
@@ -57,10 +60,8 @@
       </ul>
     </nav>
 
-    <!-- Opens the contact pop-up -->
-    <button type="button" class="btn btn--primary" data-contact-open aria-haspopup="dialog" aria-controls="contact-dialog">
-      Let’s chat
-    </button>
+    <!-- Takes visitors to the packages, where each package opens the message pop-up -->
+    <a class="btn btn--primary" href="#packages-pick" data-guide-to-packages>Let’s chat</a>
   </header>
 
   <main id="main">
@@ -83,15 +84,20 @@
         <div class="hero__contact">
           <p>Contact us</p>
           <ul>
-            <!-- js/main.js fills in these links from the SETTINGS at its top -->
+            <!-- WhatsApp and email lead to the packages; X opens our page (set in js/main.js) -->
             <li>
-              <a class="icon-btn" href="#contact" data-contact="whatsapp" aria-label="Contact us on WhatsApp">
+              <a class="icon-btn" href="#packages-pick" data-guide-to-packages aria-label="Contact us on WhatsApp: choose a package first">
                 <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"></use></svg>
               </a>
             </li>
             <li>
-              <a class="icon-btn" href="#contact" data-contact="email" aria-label="Contact us by email">
+              <a class="icon-btn" href="#packages-pick" data-guide-to-packages aria-label="Contact us by email: choose a package first">
                 <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-email"></use></svg>
+              </a>
+            </li>
+            <li>
+              <a class="icon-btn" href="https://x.com/DBDStudio_" data-x-profile target="_blank" rel="noopener noreferrer" aria-label="DBD Studio on X (opens in a new tab)">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
               </a>
             </li>
           </ul>
@@ -140,34 +146,35 @@
 
 
     <!-- =========================================================
+         INTRO FROM THE FOUNDER
+         A muted loop plays while it is on screen. Tapping it opens
+         #intro-dialog, which plays the same video with sound.
+         Video file: assets/video/intro.mp4
+         ========================================================= -->
+    <section id="intro" class="section intro" aria-labelledby="intro-title">
+      <h2 id="intro-title">A word from the founder</h2>
+      <p>A short welcome to DBD Studio. Tap the video to watch it with sound.</p>
+      <button type="button" class="intro__play" data-intro-open aria-haspopup="dialog" aria-controls="intro-dialog" aria-label="Watch the founder’s introduction with sound">
+        <video class="intro__video" data-ambient data-saveable muted loop playsinline preload="metadata"
+               src="assets/video/intro.mp4#t=0.1"></video>
+        <span class="intro__hint">Watch with sound</span>
+      </button>
+    </section>
+
+
+    <!-- =========================================================
          ABOUT / THE STUDIO
          ========================================================= -->
     <section id="about" class="section about" aria-labelledby="about-title">
       <h2 id="about-title">About the studio</h2>
       <div class="about__text">
-        <p>Db4D Studio is an independent creative studio making video, motion graphics and campaign visuals for brands. We develop the concept, direct every sequence and refine each frame until it is right.</p>
+        <p>DBD Studio is an independent creative studio making video, motion graphics and campaign visuals for brands. We develop the concept, direct every sequence and refine each frame until it is right.</p>
         <p>The name stands for Designed before Design. Our belief is that the original Designer came first, and that human creativity is at its best when it learns from the order, beauty and intention already present in creation. So our work starts with purpose, not decoration.</p>
         <p>AI is one of the tools in our process. The direction, the corrections and the final quality are ours.</p>
       </div>
       <figure class="about__media">
-        <img src="assets/images/logo.png" alt="Db4D Studio logo">
+        <img src="assets/images/logo.png" alt="DBD Studio logo">
       </figure>
-    </section>
-
-
-    <!-- =========================================================
-         MEET THE CREATOR (hidden until the intro video exists)
-         To switch it on: save the video as assets/video/intro.mp4,
-         add a poster image assets/images/intro-poster.jpg,
-         write the one-line intro, then delete the word "hidden"
-         from the <section> tag below.
-         ========================================================= -->
-    <section id="creator" class="section creator" aria-labelledby="creator-title" hidden>
-      <h2 id="creator-title">Meet the creator</h2>
-      <p>[Placeholder: one line introducing you and what the video covers]</p>
-      <video class="creator__video" controls controlslist="nodownload noplaybackrate" disablepictureinpicture playsinline preload="none"
-             poster="assets/images/intro-poster.jpg" src="assets/video/intro.mp4"
-             aria-label="Introduction from the creator of Db4D Studio"></video>
     </section>
 
 
@@ -365,6 +372,7 @@
          ========================================================= -->
     <section id="packages" class="section packages" aria-labelledby="packages-title">
       <h2 id="packages-title">Packages and partnerships</h2>
+      <p class="packages__pick" id="packages-pick" tabindex="-1">Want to message us? Choose the package closest to your project below.</p>
       <p>Choose the package closest to your project, or ask for a custom one. Scope is agreed before work begins. Prices are in US dollars, and the naira amount is quoted at the day’s exchange rate.</p>
 
       <div class="packages__grid">
@@ -429,17 +437,22 @@
          ========================================================= -->
     <section id="contact" class="section contact" aria-labelledby="contact-title">
       <h2 id="contact-title">Get in touch</h2>
-      <p>Have an idea, a product to launch or a story to tell? Send a message and let’s shape it together.</p>
+      <p>Have an idea, a product to launch or a story to tell? Choose the package closest to your project and start a message from there. You can also find us on X any time.</p>
 
       <ul class="contact__methods">
         <li>
-          <a class="icon-btn icon-btn--lg" href="#" data-contact="whatsapp" aria-label="Message us on WhatsApp">
+          <a class="icon-btn icon-btn--lg" href="#packages-pick" data-guide-to-packages aria-label="Message us on WhatsApp: choose a package first">
             <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"></use></svg>
           </a>
         </li>
         <li>
-          <a class="icon-btn icon-btn--lg" href="#" data-contact="email" aria-label="Send us an email">
+          <a class="icon-btn icon-btn--lg" href="#packages-pick" data-guide-to-packages aria-label="Send us an email: choose a package first">
             <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-email"></use></svg>
+          </a>
+        </li>
+        <li>
+          <a class="icon-btn icon-btn--lg" href="https://x.com/DBDStudio_" data-x-profile target="_blank" rel="noopener noreferrer" aria-label="DBD Studio on X (opens in a new tab)">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
           </a>
         </li>
       </ul>
@@ -452,9 +465,35 @@
        FOOTER
        ========================================================= -->
   <footer class="site-footer">
-    <p>&copy; 2026 Db4D Studio</p>
-    <a class="btn btn--primary" href="#top">Back to top</a>
+    <p>&copy; 2026 DBD Studio</p>
+    <div class="site-footer__actions">
+      <a class="icon-btn" href="https://x.com/DBDStudio_" data-x-profile target="_blank" rel="noopener noreferrer" aria-label="DBD Studio on X (opens in a new tab)">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+      </a>
+      <a class="btn btn--primary" href="#top">Back to top</a>
+    </div>
   </footer>
+
+
+  <!-- =========================================================
+       INTRO POP-UP: the founder's video with sound + link to the X thread
+       The video file is loaded when the pop-up opens (data-src).
+       ========================================================= -->
+  <dialog id="intro-dialog" class="intro-dialog" aria-labelledby="intro-dialog-title">
+    <h2 id="intro-dialog-title">A message from the founder of DBD Studio</h2>
+    <video id="intro-video" class="intro-dialog__video" data-saveable controls playsinline preload="none"
+           data-src="assets/video/intro.mp4"
+           aria-label="Introduction from the founder of DBD Studio"></video>
+    <p>In this short intro, I explain who we are and what we offer: cinematic brand videos, promo ads, motion graphics and creative direction. The full presentation is on our X page.</p>
+    <div class="intro-dialog__actions">
+      <a class="btn btn--primary btn--icon" href="https://x.com/DBDStudio_/status/2120903868833812726" data-x-thread target="_blank" rel="noopener noreferrer"
+         aria-label="Watch the full video on X (opens in a new tab)">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+        Watch full video on X
+      </a>
+      <button type="button" class="btn btn--dark" data-intro-close>Close</button>
+    </div>
+  </dialog>
 
 
   <!-- =========================================================
@@ -493,6 +532,13 @@
           <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-email"></use></svg>
           <span class="contact-dialog__label">Email</span>
           <span class="contact-dialog__note">Opens your email app with a message you can edit</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://x.com/DBDStudio_" data-contact="x" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+          <span class="contact-dialog__label">X</span>
+          <span class="contact-dialog__note" data-x-note>Opens our X page</span>
         </a>
       </li>
     </ul>
