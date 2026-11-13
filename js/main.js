@@ -6,7 +6,7 @@
 const SETTINGS = {
   // Country code + number, no "+" and no spaces
   whatsappNumber: "2347084788749",
-  email: "danielmathias769@gmail.com",
+  email: "dbdstudioo@gmail.com",
 
   // X (Twitter). The X buttons open the profile page below.
   xProfile: "https://x.com/DBDStudio_",
